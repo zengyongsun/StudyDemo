@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.downMsg)
     TextView downMsg;
     Socket socket;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,28 +36,44 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {// 创建一个Socket对象，并指定服务端的IP及端口号
-            socket = new Socket("192.168.4.250", 10005);
+            socket = new Socket("192.168.0.110", 10005);
             // 获取Socket的OutputStream对象用于发送数据。
             OutputStream outputStream = socket.getOutputStream();
-             InputStream stream = socket.getInputStream();
+
             outputStream.write("你好".getBytes("utf-8"));
             // 发送读取的数据到服务端
             outputStream.flush();
-            while (true) {
+            //不加上这句后面的，获取输入流没有信息，阻塞
+            socket.shutdownOutput();
+            InputStream stream = socket.getInputStream();
+            byte[] by = new byte[1024];
+            int tem = 0;
+            FileOutputStream fos = null;
+            File file = new File(getCacheDir() + "test.apk");
+            if(!file.exists()){
+                file.mkdirs();
+            }
+            fos = new FileOutputStream(file);
+            while ((tem = stream.read(by)) != -1) {
+                fos.write(by, 0, tem);
+                Log.d("InputStream", tem + "");
+            }
+            if (fos != null) {
+                fos.flush();
+            }
+            Log.d("InputStream", "=====");
 
-                            byte[] by = new byte[1024];
-                            int tem = 0;
-                             FileOutputStream fos = null;
-                            while ((tem = stream.read(by)) != -1) {
-                                 fos = new FileOutputStream(getCacheDir() + "test.apk");
-                                fos.write(by, 0, tem);
-                                Log.d("InputStream",tem+"");
-                            }
-                            if (fos!=null) {
-                                fos.flush();
-                            }
-                             Log.d("InputStream","=====");
-                }
+
+//            InputStream stream = socket.getInputStream();
+//            byte[] reDate = new byte[1024 * 4];
+//            int temp = 0;
+//            // 从InputStream当中读取客户端所发送的数据\
+//            String str = "";
+//            while ((temp = stream.read(reDate)) != -1) {
+//                str = new String(reDate, 0, temp);
+//
+//                Log.d("InputStream", "=====" + str);
+//            }
 
             /** 或创建一个报文，使用BufferedWriter写入,看你的需求 **/
 //          String socketData = "[2143213;21343fjks;213]";

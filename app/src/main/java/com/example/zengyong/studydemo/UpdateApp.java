@@ -17,9 +17,11 @@ public class UpdateApp {
 			server = new ServerSocket(10005);
 				// 调用ServerSocket的accept()方法，接受客户端所发送的请求，
 				// 如果客户端没有发送数据，那么该线程就停滞不继续
+			while(true){
 				Socket socket = server.accept();
 				// 从Socket当中得到InputStream对象
 				InputStream inputStream = socket.getInputStream();
+				OutputStream outputStream = socket.getOutputStream();
 				byte[] reDate = new byte[1024 * 4];
 				int temp = 0;
 				// 从InputStream当中读取客户端所发送的数据\
@@ -30,9 +32,9 @@ public class UpdateApp {
 					System.out.println(str);
 				}
 				if("你好".equals(str)){
-					FileInputStream fis = new FileInputStream("d://app_test_1.apk");
+					FileInputStream fis = new FileInputStream("d://app-debug.apk");
 					// 获取Socket的OutputStream对象用于发送数据。
-		            OutputStream outputStream = socket.getOutputStream();
+//					outputStream.write("你也好啊".getBytes());
 		            byte[] sendDate = new byte[1024 ];
 					int tem = 0;
 					while ((tem = fis.read(sendDate)) != -1) {
@@ -41,7 +43,7 @@ public class UpdateApp {
 					}
 					outputStream.flush();
 				}
-
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
