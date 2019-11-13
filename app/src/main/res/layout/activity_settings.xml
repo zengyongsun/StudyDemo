@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".setting.SettingsActivity">
+
+    <Button
+        android:id="@+id/oneLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="定位设置"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/twoWlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="无线和网络"
+        app:layout_constraintLeft_toRightOf="@+id/oneLocation"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/threeShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示设置"
+        app:layout_constraintLeft_toRightOf="@+id/twoWlan"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="声音设置"
+        app:layout_constraintLeft_toRightOf="@+id/threeShow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/wifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="wifi设置"
+        app:layout_constraintLeft_toRightOf="@+id/voice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间设置"
+        app:layout_constraintLeft_toRightOf="@+id/wifi"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/accessibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="辅助界面"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/oneLocation" />
+
+    <Button
+        android:id="@+id/input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="输入法"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accessibility" />
+
+    <Button
+        android:id="@+id/selectLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="系统语言"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input" />
+
+    <Button
+        android:id="@+id/setIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IP设置"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectLanguage" />
+
+</android.support.constraint.ConstraintLayout>

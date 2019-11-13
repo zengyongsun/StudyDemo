@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="gradient_color_start">#00c5fe</color>
+    <color name="gradient_color_end">#0080f7</color>
+
+    <color name="progress_bar_bg_color">#0d1d4a</color>
+
+    <color name="white_ff">#00ffffff</color>
+
 </resources>

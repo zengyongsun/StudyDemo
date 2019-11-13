@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".voice.VoiceActivity">
+
+    <EditText
+        android:id="@+id/etOne"
+        android:layout_width="0dp"
+        android:text="讯飞语音播报"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btRead"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="露天矿山智能调度系统"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btRead"
+        app:layout_constraintTop_toBottomOf="@+id/etOne" />
+
+    <Button
+        android:id="@+id/btReadThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放3次"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRead" />
+
+
+</android.support.constraint.ConstraintLayout>
