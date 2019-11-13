@@ -10,6 +10,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.zengyong.studydemo.adb.RunAdbActivity;
+import com.example.zengyong.studydemo.chart.ChartActivity;
 import com.example.zengyong.studydemo.common.SwitchActivity;
 import com.example.zengyong.studydemo.device.DevcieInfoActivity;
 import com.example.zengyong.studydemo.dialog.DialogFragmentActivity;
@@ -101,6 +102,7 @@ public class MainActivity extends BaseActivity {
         list.add(new ClassBean("执行adb命令", RunAdbActivity.class));
         list.add(new ClassBean("语音播报", VoiceActivity.class));
         list.add(new ClassBean("对话框", DialogFragmentActivity.class));
+        list.add(new ClassBean("柱状图", ChartActivity.class));
         return list;
     }
 
